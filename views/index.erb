@@ -1,21 +1,67 @@
 <html>
-  <head></head>
+  <head>
+    <title>Caesar Cypher by Leo Bensman</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Space+Mono" rel="stylesheet">
+  </head>
   <body>
   	<style>
       html {
         background-color: pink;
+        font-family: 'Inconsolata', monospace;
       }
       div {
         margin: auto;
         text-align: center;
-        margin-top: 200px;
+      }
+      .description {
+        width: 47%;
+        position: relative;
+        left: 27%;
+        top: 10px;
+        line-height: 24px;
+      }
+      form {
+        position: relative;
+        top: 10px;
+      }
+      #short {
+        width: 26px;
+        height: 24px;
+        border: 2px solid #084d6b;
+        border-radius: 6px;
+        background-color: #6bcbf4;
+      }
+      #large {
+        width: 100px;
+        border: 2px solid #084d6b;
+        border-radius: 6px;
+        background-color: #6bcbf4;
+      }
+      #submit {
+        background-color: #6bcbf4;
+        border-radius: 6px;
+      }
+      #submit:focus, #large:focus, #short:focus {
+        outline: none;
+      }
+      #output {
+        position: relative;
+        width: 30%;
+        left: 35%;
       }
     </style>
     <div>
+    <h1 class='description'>Caesar Cypher</h1>
+    <p class='description'><em>In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.</em> <br> -Wikipedia</p> <br><br>
     <form>
-    	<input type='text' name='input' />
+      Enter the degree with which you would like to shift left:<br><br><input id='short' type='integer' maxlength='1' name='shift' /> <br> <br>
+    	Enter the message you would like to encrypt:<br><br><textarea id='large' type='text' rows='3' name='input'> </textarea> <br>
+      <input id='submit' type='submit' value='TRANSLATE'>
+      <br><br>
     </form>
-    <p> <%= translated %> </p>
+    <p id='output'> your encoded message: <br>
+      <%= translated %>
+    </p>
    </div>
   </body>
 </html>

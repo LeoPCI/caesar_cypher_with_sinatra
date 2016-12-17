@@ -38,8 +38,9 @@ class Cypher
 end
 
 get '/' do
+	shift = params["shift"].to_i
 	input = params["input"]
-	cypher = Cypher.new(input, 3)
+	cypher = Cypher.new(input, shift)
 	translated = cypher.translate
 	erb :index, :locals => {:translated => translated}
 end
